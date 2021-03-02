@@ -21,9 +21,9 @@ public class OnBlockBreak implements Listener {
     }
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event) {
-        // If the block is either nether gold ore, or gilded blackstone
-        if (!((event.getBlock().getType() == Material.NETHER_GOLD_ORE) || (event.getBlock().getType() == Material.GILDED_BLACKSTONE))) return;
+    public void onNetherGoldOreBreak(BlockBreakEvent event) {
+        // If the block is not nether gold ore, stop
+        if (!(event.getBlock().getType() == Material.NETHER_GOLD_ORE)) return;
 
         // Get the block and store it in block
         Block block = event.getBlock();
@@ -39,8 +39,31 @@ public class OnBlockBreak implements Listener {
 
         // Make and drop a piece of netherrack
         ItemStack netherrackDrop = new ItemStack(Material.NETHERRACK);
-        event.getPlayer().getWorld().dropItemNaturally(blockLoc, netherrackDrop);
+        Location locFixed = blockLoc.add(0, 0.5, 0);
+        event.getPlayer().getWorld().dropItemNaturally(locFixed, netherrackDrop);
+    }
 
+    @EventHandler
+    public void onGildedBlackstoneBreak(BlockBreakEvent event) {
+        // If the block is not gilded blackstone, stop
+        if (!(event.getBlock().getType() == Material.GILDED_BLACKSTONE)) return;
+
+        // Get the block and store it in block
+        Block block = event.getBlock();
+
+        // Cancel the break event
+        event.setCancelled(true);
+
+        // Set the block to air
+        block.setType(Material.AIR);
+
+        // Get the location of the block from the event
+        Location blockLoc = block.getLocation();
+
+        // Make and drop a piece of blackstone
+        ItemStack blackstoneDrop = new ItemStack(Material.BLACKSTONE);
+        Location locFixed = blockLoc.add(0, 0.5, 0);
+        event.getPlayer().getWorld().dropItemNaturally(locFixed, blackstoneDrop);
     }
 
 }
