@@ -70,7 +70,7 @@ public class OnBlockBreak implements Listener {
 
     @EventHandler
     public void onNetherGoldOreEntityExplode(EntityExplodeEvent event) {
-        if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball)) {
+        if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball) || (event.getEntity() instanceof Minecart) || (event.getEntity() instanceof Explosive)) {
             for (Block block : event.blockList()) {
                 if (block.getType() == Material.NETHER_GOLD_ORE) {
                     event.blockList().remove(block);
@@ -81,7 +81,7 @@ public class OnBlockBreak implements Listener {
 
     @EventHandler
     public void onGildedBlackstoneEntityExplode(EntityExplodeEvent event) {
-        if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball)) {
+        if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball) || (event.getEntity() instanceof Minecart) || (event.getEntity() instanceof Explosive)) {
             for (Block block : event.blockList()) {
                 if (block.getType() == Material.GILDED_BLACKSTONE) {
                     event.blockList().remove(block);
