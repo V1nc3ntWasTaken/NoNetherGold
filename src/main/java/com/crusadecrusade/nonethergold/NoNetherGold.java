@@ -1,5 +1,6 @@
 package com.crusadecrusade.nonethergold;
 
+import com.crusadecrusade.nonethergold.listeners.OnBlockBreak;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NoNetherGold extends JavaPlugin {
@@ -8,6 +9,7 @@ public final class NoNetherGold extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
+        new OnBlockBreak(this);
     }
 
     @Override
