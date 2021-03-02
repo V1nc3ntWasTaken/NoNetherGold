@@ -1,0 +1,7 @@
+name: NoNetherGold
+version: ${project.version}
+main: com.crusadecrusade.nonethergold.NoNetherGold
+api-version: 1.16
+authors: [ V1nc3ntWasTaken ]
+description: Stops the dropping of gold from ores in the nether
+website: https://crusade-craft.com
