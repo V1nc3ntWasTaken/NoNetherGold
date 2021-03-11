@@ -6,7 +6,7 @@
 
     <groupId>com.crusadecrusade</groupId>
     <artifactId>NoNetherGold</artifactId>
-    <version>2.0</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <name>NoNetherGold</name>

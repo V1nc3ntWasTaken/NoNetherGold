@@ -70,46 +70,50 @@ public class OnBlockBreak implements Listener {
 
     @EventHandler
     public void onNetherGoldOreEntityExplode(EntityExplodeEvent event) {
-        // if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball) || (event.getEntity() instanceof Minecart) || (event.getEntity() instanceof Explosive)) {
-            for (Block block : event.blockList()) {
-                if (block.getType() == Material.NETHER_GOLD_ORE) {
+        Entity entity = event.getEntity();
+
+        if (entity.getType().equals(EntityType.CREEPER) || entity.getType().equals(EntityType.PRIMED_TNT) || entity.getType().equals(EntityType.MINECART_TNT) || entity.getType().equals(EntityType.ENDER_CRYSTAL) || entity.getType().equals(EntityType.FIREBALL) || entity.getType().equals(EntityType.SMALL_FIREBALL) || entity.getType().equals(EntityType.DRAGON_FIREBALL) || entity.getType().equals(EntityType.CREEPER) || entity.getType().equals(EntityType.PLAYER)) {
+            for (Block block : event.blockList().toArray(new Block[event.blockList().size()])) {
+                if (block.getType().equals(Material.NETHER_GOLD_ORE)) {
                     event.blockList().remove(block);
                 }
             }
-        // }
+        }
     }
 
     @EventHandler
     public void onGildedBlackstoneEntityExplode(EntityExplodeEvent event) {
-        // if ((event.getEntity() instanceof TNTPrimed) || (event.getEntity() instanceof Creeper) || (event.getEntity() instanceof EnderCrystal) || (event.getEntity() instanceof Fireball) || (event.getEntity() instanceof DragonFireball) || (event.getEntity() instanceof LargeFireball) || (event.getEntity() instanceof SizedFireball) || (event.getEntity() instanceof SmallFireball) || (event.getEntity() instanceof Minecart) || (event.getEntity() instanceof Explosive)) {
-            for (Block block : event.blockList()) {
-                if (block.getType() == Material.GILDED_BLACKSTONE) {
+        Entity entity = event.getEntity();
+
+        if (entity.getType().equals(EntityType.CREEPER) || entity.getType().equals(EntityType.PRIMED_TNT) || entity.getType().equals(EntityType.MINECART_TNT) || entity.getType().equals(EntityType.ENDER_CRYSTAL) || entity.getType().equals(EntityType.FIREBALL) || entity.getType().equals(EntityType.SMALL_FIREBALL) || entity.getType().equals(EntityType.DRAGON_FIREBALL) || entity.getType().equals(EntityType.CREEPER) || entity.getType().equals(EntityType.PLAYER)) {
+            for (Block block : event.blockList().toArray(new Block[event.blockList().size()])) {
+                if (block.getType().equals(Material.GILDED_BLACKSTONE)) {
                     event.blockList().remove(block);
                 }
             }
-        // }
+        }
     }
 
     @EventHandler
     public void onNetherGoldOreBlockExplode(BlockExplodeEvent event) {
-        // if ((event.getBlock().getType() == Material.WHITE_BED) || (event.getBlock().getType() == Material.BLACK_BED) || (event.getBlock().getType() == Material.BLUE_BED) || (event.getBlock().getType() == Material.BROWN_BED) || (event.getBlock().getType() == Material.CYAN_BED) || (event.getBlock().getType() == Material.GRAY_BED) || (event.getBlock().getType() == Material.GREEN_BED) || (event.getBlock().getType() == Material.LIGHT_BLUE_BED) || (event.getBlock().getType() == Material.LIGHT_GRAY_BED) || (event.getBlock().getType() == Material.LIME_BED) || (event.getBlock().getType() == Material.MAGENTA_BED) || (event.getBlock().getType() == Material.ORANGE_BED) || (event.getBlock().getType() == Material.PINK_BED) || (event.getBlock().getType() == Material.PURPLE_BED) || (event.getBlock().getType() == Material.RED_BED) || (event.getBlock().getType() == Material.YELLOW_BED)) {
-            for (Block block : event.blockList()) {
-                if (block.getType() == Material.NETHER_GOLD_ORE) {
+        if (event.getBlock().getType().equals(Material.AIR) || event.getBlock().getType().equals(Material.WHITE_BED) || event.getBlock().getType().equals(Material.BLACK_BED) || event.getBlock().getType().equals(Material.BLUE_BED) || event.getBlock().getType().equals(Material.BROWN_BED) || event.getBlock().getType().equals(Material.CYAN_BED) || event.getBlock().getType().equals(Material.GRAY_BED) || event.getBlock().getType().equals(Material.GREEN_BED) || event.getBlock().getType().equals(Material.LIGHT_BLUE_BED) || event.getBlock().getType().equals(Material.LIGHT_GRAY_BED) || event.getBlock().getType().equals(Material.LIME_BED) || event.getBlock().getType().equals(Material.MAGENTA_BED) || event.getBlock().getType().equals(Material.ORANGE_BED) || event.getBlock().getType().equals(Material.PINK_BED) || event.getBlock().getType().equals(Material.PURPLE_BED) || event.getBlock().getType().equals(Material.RED_BED) || event.getBlock().getType().equals(Material.YELLOW_BED)) {
+            for (Block block : event.blockList().toArray(new Block[event.blockList().size()])) {
+                if (block.getType().equals(Material.NETHER_GOLD_ORE)) {
                     event.blockList().remove(block);
                 }
             }
-        // }
+        }
     }
 
     @EventHandler
     public void onGildedBlackstoneBlockExplode(BlockExplodeEvent event) {
-        // if ((event.getBlock().getType() == Material.WHITE_BED) || (event.getBlock().getType() == Material.BLACK_BED) || (event.getBlock().getType() == Material.BLUE_BED) || (event.getBlock().getType() == Material.BROWN_BED) || (event.getBlock().getType() == Material.CYAN_BED) || (event.getBlock().getType() == Material.GRAY_BED) || (event.getBlock().getType() == Material.GREEN_BED) || (event.getBlock().getType() == Material.LIGHT_BLUE_BED) || (event.getBlock().getType() == Material.LIGHT_GRAY_BED) || (event.getBlock().getType() == Material.LIME_BED) || (event.getBlock().getType() == Material.MAGENTA_BED) || (event.getBlock().getType() == Material.ORANGE_BED) || (event.getBlock().getType() == Material.PINK_BED) || (event.getBlock().getType() == Material.PURPLE_BED) || (event.getBlock().getType() == Material.RED_BED) || (event.getBlock().getType() == Material.YELLOW_BED)) {
-            for (Block block : event.blockList()) {
-                if (block.getType() == Material.GILDED_BLACKSTONE) {
+        if (event.getBlock().getType().equals(Material.AIR) || event.getBlock().getType().equals(Material.WHITE_BED) || event.getBlock().getType().equals(Material.BLACK_BED) || event.getBlock().getType().equals(Material.BLUE_BED) || event.getBlock().getType().equals(Material.BROWN_BED) || event.getBlock().getType().equals(Material.CYAN_BED) || event.getBlock().getType().equals(Material.GRAY_BED) || event.getBlock().getType().equals(Material.GREEN_BED) || event.getBlock().getType().equals(Material.LIGHT_BLUE_BED) || event.getBlock().getType().equals(Material.LIGHT_GRAY_BED) || event.getBlock().getType().equals(Material.LIME_BED) || event.getBlock().getType().equals(Material.MAGENTA_BED) || event.getBlock().getType().equals(Material.ORANGE_BED) || event.getBlock().getType().equals(Material.PINK_BED) || event.getBlock().getType().equals(Material.PURPLE_BED) || event.getBlock().getType().equals(Material.RED_BED) || event.getBlock().getType().equals(Material.YELLOW_BED)/* || event.getBlock().getType().equals(Material.LEGACY_BED) */) {
+            for (Block block : event.blockList().toArray(new Block[event.blockList().size()])) {
+                if (block.getType().equals(Material.GILDED_BLACKSTONE)) {
                     event.blockList().remove(block);
                 }
             }
-        // }
+        }
     }
 
 }
